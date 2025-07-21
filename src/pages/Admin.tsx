@@ -26,7 +26,7 @@ const Admin: React.FC<AdminProps> = ({ onLogout }) => {
   useEffect(() => {
     fetchReports()
     fetchUsers()
-  }, [filters])
+  }, [filters]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const fetchUsers = async () => {
     const { data } = await supabase.from('profiles').select('*')
